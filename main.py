@@ -82,7 +82,7 @@ async def on_error(event, *args, **kwargs):
 async def main():
     # Start both bots asynchronously
     await asyncio.gather(
-        nicobot.start(NICOBOT_TOKEN),
+        #nicobot.start(NICOBOT_TOKEN),
         nccasino_bot.start(NCCASINO_TOKEN)
     )
 
