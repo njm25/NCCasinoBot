@@ -26,8 +26,8 @@ last_total_downloads = None  # Initially None to check if we have a real value
 latest_version = None
 display_toggle = False  # False: show downloads, True: show version
 
-# Task to check the download counts every 60 minutes
-@tasks.loop(minutes=60)
+# Task to check the downloads once per day
+@tasks.loop(hours=24)
 async def check_downloads():
     global last_total_downloads
     try:
@@ -39,8 +39,8 @@ async def check_downloads():
         print(f"Error in check_downloads: {e}")
         traceback.print_exc()
 
-# Task to check the version once per day
-@tasks.loop(hours=24)
+# Task to check the version once per hour
+@tasks.loop(minutes=60)
 async def check_version():
     global latest_version
     try:
