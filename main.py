@@ -78,7 +78,7 @@ async def rotate_display():
 
     display_state = (display_state + 1) % 3  # Cycle through 0, 1, 2
     if display_state == 0:
-        status_text = f"Total Downloads: {last_total_downloads}"
+        status_text = f"Downloads: {last_total_downloads}"
     elif display_state == 1:
         status_text = f"Current Version: {latest_version}"
     else:
